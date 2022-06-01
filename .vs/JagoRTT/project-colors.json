@@ -3,9 +3,19 @@
   "ProjectMap": {
     "93665df2-8315-4d35-a6e2-71e7f1177d84": {
       "ProjectGuid": "93665df2-8315-4d35-a6e2-71e7f1177d84",
-      "DisplayName": "JagoRTT",
+      "DisplayName": "JagoRTT.domain",
       "ColorIndex": 0
+    },
+    "f3cde39e-23db-4743-a0e5-35bd974c9445": {
+      "ProjectGuid": "f3cde39e-23db-4743-a0e5-35bd974c9445",
+      "DisplayName": "JagoRTT.Infrastructure",
+      "ColorIndex": 1
+    },
+    "2918de7c-3c8f-4a5a-b747-24d28229aa67": {
+      "ProjectGuid": "2918de7c-3c8f-4a5a-b747-24d28229aa67",
+      "DisplayName": "JagoRTT.IoC",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

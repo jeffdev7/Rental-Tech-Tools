@@ -2,7 +2,7 @@
 
 namespace JagoRTT.domain.Interfaces.Repositories
 {
-    public interface IEmployeelRepository : IRepository<Employee>
+    public interface IEmployeeRepository : IRepository<Employee>
     {
         
         IQueryable<Company> GetCia();

@@ -1,0 +1,17 @@
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.Infrastructure.deps.json
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.Infrastructure.runtimeconfig.json
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.Infrastructure.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\ref\JagoRTT.Infrastructure.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.Infrastructure.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.domain.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\bin\Debug\net6.0\JagoRTT.domain.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.AssemblyInfo.cs
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.csproj.CopyComplete
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\ref\JagoRTT.Infrastructure.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Infrastructure\obj\Debug\net6.0\JagoRTT.Infrastructure.genruntimeconfig.cache
