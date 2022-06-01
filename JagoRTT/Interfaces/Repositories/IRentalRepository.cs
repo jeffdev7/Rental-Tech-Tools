@@ -1,0 +1,15 @@
+﻿using JagoRTT.domain.Entities;
+
+namespace JagoRTT.domain.Interfaces.Repositories
+{
+    public interface IRentalRepository : IRepository<Rental>
+    {
+        
+        IQueryable<Tool> GetTools();
+        IQueryable<Company> GetCia();
+        bool IsValidToolId(Guid toolId);
+        bool IsValidCompanyId(Guid companyId);
+       // IQueryable<ToolListModel> GetToolList();
+        //IQueryable<CompanyListModel> GetCompanyList();
+    }
+}
