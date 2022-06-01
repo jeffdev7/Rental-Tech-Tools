@@ -10,14 +10,16 @@ namespace JagoRTT.domain.Entities
         public string Name { get; set; }
         public string Model { get; set; }
         public EBrand Brand { get; set; }
+        public int QuantityInStock { get; set; }
 
         public Tool() { }
 
-        public Tool(string name, string model, EBrand brand)
+        public Tool(string name, string model, EBrand brand, int amount)
         {
             Name = name;
             Model = model;
             Brand = brand;
+            QuantityInStock = amount;
         }
 
         public void Configure(EntityTypeBuilder<Tool>builder)
@@ -27,6 +29,7 @@ namespace JagoRTT.domain.Entities
             builder.Property(j => j.Name);
             builder.Property(j => j.Model).IsRequired();
             builder.Property(j => j.Brand).IsRequired();
+            builder.Property(j =>j.QuantityInStock).IsRequired();
         }
     }
 }
