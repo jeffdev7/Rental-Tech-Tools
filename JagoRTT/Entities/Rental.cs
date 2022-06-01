@@ -9,7 +9,7 @@ namespace JagoRTT.domain.Entities
         public Guid Id { get; set; }
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
         public ETypeOfRental Type { get; set; }
         public virtual Tool Tool { get; set; }
         public Guid ToolId { get; set; }
@@ -18,7 +18,7 @@ namespace JagoRTT.domain.Entities
 
         public Rental() { }
 
-        public Rental(Guid id, DateTime beginDate, DateTime endDate, float price, ETypeOfRental type, Guid toolId, Guid companyId)
+        public Rental(Guid id, DateTime beginDate, DateTime endDate, decimal price, ETypeOfRental type, Guid toolId, Guid companyId)
         {
             Id = id;
             BeginDate = beginDate;
