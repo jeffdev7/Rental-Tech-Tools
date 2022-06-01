@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagoRTT", "JagoRTT\JagoRTT.csproj", "{93665DF2-8315-4D35-A6E2-71E7F1177D84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JagoRTT.domain", "JagoRTT\JagoRTT.domain.csproj", "{93665DF2-8315-4D35-A6E2-71E7F1177D84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{EB3D58CB-FAA8-4BC5-B454-8982BBFAFADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93665DF2-8315-4D35-A6E2-71E7F1177D84} = {EB3D58CB-FAA8-4BC5-B454-8982BBFAFADE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0381119-4488-40A9-9048-D9FF8583969F}
