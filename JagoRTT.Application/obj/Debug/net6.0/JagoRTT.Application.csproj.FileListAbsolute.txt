@@ -1,0 +1,15 @@
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.csproj.AssemblyReference.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.AssemblyInfoInputs.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.AssemblyInfo.cs
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.csproj.CoreCompileInputs.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Application.deps.json
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Application.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\ref\JagoRTT.Application.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Application.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.domain.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.domain.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.csproj.CopyComplete
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\ref\JagoRTT.Application.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.pdb
