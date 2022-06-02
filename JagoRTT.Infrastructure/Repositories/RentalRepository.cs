@@ -1,5 +1,6 @@
 ﻿using JagoRTT.domain.Entities;
 using JagoRTT.domain.Interfaces.Repositories;
+using JagoRTT.domain.Model;
 using JagoRTT.Infrastructure.DBConfiguration;
 
 namespace JagoRTT.Infrastructure.Repositories
@@ -29,6 +30,13 @@ namespace JagoRTT.Infrastructure.Repositories
         {
             return Db.Tools.Any(_ => _.Id == toolId);
         }
-        //TODO: Models here
+        public IQueryable<ToolListModel> GetToolList()
+        {
+            return Db.Tools.Select(j => new ToolListModel { Id = j.Id, Name = j.Name }).AsQueryable();
+        }
+        public IQueryable<CompanyListModel> GetCompanyList()
+        {
+            return Db.Companies.Select(j => new CompanyListModel { Id = j.Id, Name = j.Name }).AsQueryable();
+        }
     }
 }

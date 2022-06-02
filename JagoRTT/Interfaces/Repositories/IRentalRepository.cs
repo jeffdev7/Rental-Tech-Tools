@@ -1,4 +1,5 @@
 ﻿using JagoRTT.domain.Entities;
+using JagoRTT.domain.Model;
 
 namespace JagoRTT.domain.Interfaces.Repositories
 {
@@ -9,7 +10,7 @@ namespace JagoRTT.domain.Interfaces.Repositories
         IQueryable<Company> GetCia();
         bool IsValidToolId(Guid toolId);
         bool IsValidCompanyId(Guid companyId);
-       // IQueryable<ToolListModel> GetToolList();
-        //IQueryable<CompanyListModel> GetCompanyList();
+       IQueryable<ToolListModel> GetToolList();
+       IQueryable<CompanyListModel> GetCompanyList();
     }
 }

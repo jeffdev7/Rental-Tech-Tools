@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JagoRTT.domain", "JagoRTT\J
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{EB3D58CB-FAA8-4BC5-B454-8982BBFAFADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagoRTT.Infrastructure", "JagoRTT.Infrastructure\JagoRTT.Infrastructure.csproj", "{F3CDE39E-23DB-4743-A0E5-35BD974C9445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JagoRTT.Infrastructure", "JagoRTT.Infrastructure\JagoRTT.Infrastructure.csproj", "{F3CDE39E-23DB-4743-A0E5-35BD974C9445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagoRTT.IoC", "JagoRTT.IoC\JagoRTT.IoC.csproj", "{2918DE7C-3C8F-4A5A-B747-24D28229AA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JagoRTT.IoC", "JagoRTT.IoC\JagoRTT.IoC.csproj", "{2918DE7C-3C8F-4A5A-B747-24D28229AA67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - Infrastructure", "{CA638324-864D-40CA-B846-483425FD5FA2}"
 EndProject
@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagoRTT.Application", "JagoRTT.Application\JagoRTT.Application.csproj", "{CC8AB3CE-C200-45F7-A842-BB302D80398E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{E8C36409-1304-437B-AC2D-63E6CCAF6303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +46,10 @@ Global
 		{2918DE7C-3C8F-4A5A-B747-24D28229AA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2918DE7C-3C8F-4A5A-B747-24D28229AA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2918DE7C-3C8F-4A5A-B747-24D28229AA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC8AB3CE-C200-45F7-A842-BB302D80398E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC8AB3CE-C200-45F7-A842-BB302D80398E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC8AB3CE-C200-45F7-A842-BB302D80398E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC8AB3CE-C200-45F7-A842-BB302D80398E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{2E2691C0-224F-4800-9367-FCD06835C31E} = {CA638324-864D-40CA-B846-483425FD5FA2}
 		{2E3389E9-406B-4AB3-AD80-58F4DE78ED7E} = {2E2691C0-224F-4800-9367-FCD06835C31E}
 		{962E6FBC-E25E-4EFB-B80D-DD01F0E15CFD} = {2E2691C0-224F-4800-9367-FCD06835C31E}
+		{CC8AB3CE-C200-45F7-A842-BB302D80398E} = {E8C36409-1304-437B-AC2D-63E6CCAF6303}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0381119-4488-40A9-9048-D9FF8583969F}
