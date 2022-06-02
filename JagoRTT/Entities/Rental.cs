@@ -15,7 +15,6 @@ namespace JagoRTT.domain.Entities
         public Guid ToolId { get; set; }
         public virtual Company Company { get; set; }
         public Guid CompanyId { get; set; }
-        public object Name { get; set; }
 
         public Rental() { }
 

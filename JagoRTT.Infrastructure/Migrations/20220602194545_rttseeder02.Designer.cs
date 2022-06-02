@@ -3,6 +3,7 @@ using System;
 using JagoRTT.Infrastructure.DBConfiguration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JagoRTT.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220602194545_rttseeder02")]
+    partial class rttseeder02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,30 +88,6 @@ namespace JagoRTT.Infrastructure.Migrations
                     b.HasIndex("ToolId");
 
                     b.ToTable("Employees");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ea1ee3cf-b657-4f32-bd55-41eb79d9f9cf"),
-                            CPF = "946.864.370-08",
-                            CompanyId = new Guid("30479b7b-fd49-4fa4-8a75-7849524e3e3b"),
-                            Email = "carlos@gmail.com",
-                            Name = "Carlos",
-                            Phone = "11 0909-212",
-                            RentalId = new Guid("8959274b-907a-46e9-ae5b-8a2a4dafc795"),
-                            ToolId = new Guid("38b82414-bd8f-4317-8440-d5329028989d")
-                        },
-                        new
-                        {
-                            Id = new Guid("ff2f8453-2bf9-4fe2-a8e1-c33dd5d23870"),
-                            CPF = "777.762.370-19",
-                            CompanyId = new Guid("30479b7b-fd49-4fa4-8a75-7849524e3e3b"),
-                            Email = "anne@gmail.com",
-                            Name = "Anne",
-                            Phone = "11 96909-212",
-                            RentalId = new Guid("c0a91cbd-e47a-4942-9e7c-6395e7647760"),
-                            ToolId = new Guid("38b82414-bd8f-4317-8440-d5329028989d")
-                        });
                 });
 
             modelBuilder.Entity("JagoRTT.domain.Entities.Rental", b =>
@@ -143,6 +121,28 @@ namespace JagoRTT.Infrastructure.Migrations
                     b.HasIndex("ToolId");
 
                     b.ToTable("Rentals");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c0a91cbd-e47a-4942-9e7c-6395e7647760"),
+                            BeginDate = new DateTime(2022, 6, 2, 16, 45, 44, 704, DateTimeKind.Local).AddTicks(3780),
+                            CompanyId = new Guid("30479b7b-fd49-4fa4-8a75-7849524e3e3b"),
+                            EndDate = new DateTime(2022, 6, 2, 16, 45, 44, 704, DateTimeKind.Local).AddTicks(3794),
+                            Price = 100m,
+                            ToolId = new Guid("38b82414-bd8f-4317-8440-d5329028989d"),
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("8959274b-907a-46e9-ae5b-8a2a4dafc795"),
+                            BeginDate = new DateTime(2022, 6, 2, 16, 45, 44, 704, DateTimeKind.Local).AddTicks(3849),
+                            CompanyId = new Guid("f72af8f4-3b32-45c4-a9e1-fc8cbcdafc0d"),
+                            EndDate = new DateTime(2022, 6, 2, 16, 45, 44, 704, DateTimeKind.Local).AddTicks(3850),
+                            Price = 150m,
+                            ToolId = new Guid("60242ace-c5fe-4f48-9c90-a16b137d5ca5"),
+                            Type = 4
+                        });
                 });
 
             modelBuilder.Entity("JagoRTT.domain.Entities.Tool", b =>
