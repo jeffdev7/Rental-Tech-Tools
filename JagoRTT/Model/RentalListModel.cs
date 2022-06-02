@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JagoRTT.domain.Entities.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace JagoRTT.domain.Model
     public class RentalListModel
     {
         public Guid Id { get; set; }
-        public object Name { get; set; }
+       // public object Name { get; set; }
+        public ETypeOfRental Type { get; set; }
     }
 }
