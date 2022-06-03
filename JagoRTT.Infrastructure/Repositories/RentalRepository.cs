@@ -11,7 +11,7 @@ namespace JagoRTT.Infrastructure.Repositories
         {
         }
 
-        public IQueryable<Company> GetCia()
+        public IQueryable<Company> GetCompanies()
         {
             return Db.Companies;
         }

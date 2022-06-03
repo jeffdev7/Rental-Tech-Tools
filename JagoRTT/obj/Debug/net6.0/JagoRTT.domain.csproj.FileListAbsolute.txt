@@ -9,3 +9,4 @@ C:\Users\Jefferson\Documents\JagoRTT\JagoRTT\obj\Debug\net6.0\JagoRTT.domain.csp
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT\obj\Debug\net6.0\JagoRTT.domain.dll
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT\obj\Debug\net6.0\ref\JagoRTT.domain.dll
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT\obj\Debug\net6.0\JagoRTT.domain.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT\obj\Debug\net6.0\JagoRTT.domain.csproj.AssemblyReference.cache

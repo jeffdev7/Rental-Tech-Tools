@@ -7,7 +7,7 @@ namespace JagoRTT.domain.Interfaces.Repositories
     {
         
         IQueryable<Tool> GetTools();
-        IQueryable<Company> GetCia();
+        IQueryable<Company> GetCompanies();
         bool IsValidToolId(Guid toolId);
         bool IsValidCompanyId(Guid companyId);
        IQueryable<ToolListModel> GetToolList();

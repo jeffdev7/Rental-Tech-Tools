@@ -18,6 +18,8 @@ builder.Services.AddScoped<ICompanyServices, CompanyServices>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IToolServices, ToolServices>();
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
+builder.Services.AddScoped<IRentalServices, RentalServices>();
+builder.Services.AddScoped<IRentalRepository, RentalRepository>();
 
 
 //private static void RegisterServices(IServiceCollection services)

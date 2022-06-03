@@ -45,11 +45,11 @@ namespace JagoRTT.Application.Services
                      Email = _.Email,
                      Phone = _.Phone,
                      CompanyId = _.CompanyId,
-                     CiaName = _.Company.Name,
+                    // CiaName = _.Company.Name,
                      ToolId = _.ToolId,
-                     ToolName = _.Tool.Name,
+                    // ToolName = _.Tool.Name,
                      RentalId = _.RentalId,
-                     RentalType = _.Rental.Type
+                    // RentalType = _.Rental.Type
 
                  }).AsNoTracking();
             Dispose();
