@@ -6,6 +6,7 @@ using JagoRTT.domain.Entities;
 using JagoRTT.domain.Interfaces.Repositories;
 using JagoRTT.domain.Model;
 using JagoRTT.domain.Validator;
+using JagoRTT.Infrastructure.DBConfiguration;
 using Microsoft.EntityFrameworkCore;
 
 namespace JagoRTT.Application.Services
@@ -14,11 +15,13 @@ namespace JagoRTT.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IRentalRepository _rentalRepository;
+        private readonly ApplicationContext _context;
 
-        public RentalServices(IMapper mapper, IRentalRepository rentalRepository)
+        public RentalServices(IMapper mapper, IRentalRepository rentalRepository, ApplicationContext context)
         {
             _mapper = mapper;
             _rentalRepository = rentalRepository;
+            _context = context;
         }
 
         /// <summary>
@@ -45,9 +48,9 @@ namespace JagoRTT.Application.Services
                     Price = _.Price,
                     Type = _.Type,
                     ToolId = _.ToolId,
-                    ToolName = _.Tool.Name,
+                   // ToolName = _.Tool.Name,
                     CompanyId = _.CompanyId,
-                    CiaName = _.Company.Name
+                   // CiaName = _.Company.Name
 
                 }).AsNoTracking();
             Dispose();
@@ -66,9 +69,9 @@ namespace JagoRTT.Application.Services
                     Price = _.Price,
                     Type = _.Type,
                     ToolId = _.ToolId,
-                    ToolName = _.Tool.Name,
+                    //ToolName = _.Tool.Name,
                     CompanyId = _.CompanyId,
-                    CiaName = _.Company.Name
+                   // CiaName = _.Company.Name --it may not be needed
                 }).AsNoTracking();
             Dispose();
             return tool;
@@ -86,14 +89,12 @@ namespace JagoRTT.Application.Services
             return _mapper.Map<IEnumerable<RentalVM>>(_rentalRepository.GetAllBy(exp));
 
         }
-        public ValidationResult Add(RentalVM vm)
+        public async Task<RentalVM> Add(RentalVM vm)
         {
-            var entity = _mapper.Map<Rental>(vm);
-            var validationResult = new RentalValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _rentalRepository.Add(entity);
-
-            return validationResult;
+            Rental rent = _mapper.Map<Rental>(vm);
+            _context.Rentals.Add(rent);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<RentalVM>(rent);
         }
 
         public void Dispose()
@@ -101,27 +102,31 @@ namespace JagoRTT.Application.Services
             GC.SuppressFinalize(this);
         }
 
-        public ValidationResult Remove(Guid id)
+        public async Task<bool> Remove(Guid id)
         {
-            var entity = _rentalRepository.GetById(id);
-            var validationResult = new RentalValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _rentalRepository.Remove(id);
-   
-            return validationResult;
+            Rental rent = await _context.Rentals.Where(p => p.Id == id)
+                    .FirstOrDefaultAsync();
+            if (rent == null) return false;
+            _context.Rentals.Remove(rent);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public ValidationResult Update(RentalVM vm)
+        public async Task<RentalVM> Update(RentalVM vm)
         {
-            var entity = _mapper.Map<Rental>(vm);
-            var validationResult = new RentalValidator().Validate(entity);
-
-            if (validationResult.IsValid)
-            {
-                _rentalRepository.Update(entity);
-            }
-
-            return validationResult;
+            Rental rent = _mapper.Map<Rental>(vm);
+            _context.Rentals.Update(rent);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<RentalVM>(rent);
+        }
+        //extras
+        public IEnumerable<ToolVM> GetTools()
+        {
+            return _mapper.Map<IEnumerable<ToolVM>>(_rentalRepository.GetTools());
+        }
+        public IEnumerable<CompanyVM> GetCompanies()
+        {
+            return _mapper.Map<IEnumerable<CompanyVM>>(_rentalRepository.GetCompanies());
         }
     }
 }
