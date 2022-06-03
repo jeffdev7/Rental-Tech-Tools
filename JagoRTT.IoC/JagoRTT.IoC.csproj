@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JagoRTT.Application\JagoRTT.Application.csproj" />
     <ProjectReference Include="..\JagoRTT.Infrastructure\JagoRTT.Infrastructure.csproj" />
   </ItemGroup>
 

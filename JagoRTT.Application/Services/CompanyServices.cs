@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using FluentValidation.Results;
 using JagoRTT.Application.Interfaces.Services;
 using JagoRTT.Application.ViewModel;
 using JagoRTT.domain.Entities;
 using JagoRTT.domain.Interfaces.Repositories;
-using JagoRTT.domain.Validator;
+using JagoRTT.Infrastructure.DBConfiguration;
+using Microsoft.EntityFrameworkCore;
 
 namespace JagoRTT.Application.Services
 {
@@ -12,11 +12,13 @@ namespace JagoRTT.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly ICompanyRepository _ciaRepository;
+        private readonly ApplicationContext _context;
 
-        public CompanyServices(IMapper mapper, ICompanyRepository ciaRepository)
+        public CompanyServices(IMapper mapper, ICompanyRepository ciaRepository, ApplicationContext context)
         {
             _mapper = mapper;
             _ciaRepository = ciaRepository;
+            _context = context;
         }
         public IEnumerable<CompanyVM> GetAll()
         {
@@ -32,14 +34,13 @@ namespace JagoRTT.Application.Services
             return _mapper.Map<IEnumerable<CompanyVM>>(_ciaRepository.GetAllBy(exp));
 
         }
-        public ValidationResult Add(CompanyVM vm)
-        {
-            var entity = _mapper.Map<Company>(vm);
-            var validationResult = new CompanyValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _ciaRepository.Add(entity);
 
-            return validationResult;
+        public async Task<CompanyVM> Add(CompanyVM vm)
+        {
+            Company cia = _mapper.Map<Company>(vm);
+            _context.Companies.Add(cia);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<CompanyVM>(cia);
         }
 
         public void Dispose()
@@ -52,27 +53,22 @@ namespace JagoRTT.Application.Services
             return _mapper.Map<IEnumerable<CompanyVM>>(_ciaRepository.GetCia());
         }
 
-        public ValidationResult Remove(Guid id)
+        public async Task<bool> Remove(Guid id)
         {
-            var entity = _ciaRepository.GetById(id);
-            var validationResult = new CompanyValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _ciaRepository.Remove(id);
-   
-            return validationResult;
+            Company cia = await _context.Companies.Where(p => p.Id == id)
+                    .FirstOrDefaultAsync();
+            if (cia == null) return false;
+            _context.Companies.Remove(cia);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public ValidationResult Update(CompanyVM vm)
-        {
-            var entity = _mapper.Map<Company>(vm);
-            var validationResult = new CompanyValidator().Validate(entity);
-
-            if (validationResult.IsValid)
-            {
-                _ciaRepository.Update(entity);
-            }
-
-            return validationResult;
+        public async Task<CompanyVM> Update(CompanyVM vm)
+        {  
+            Company cia = _mapper.Map<Company>(vm);
+            _context.Companies.Update(cia);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<CompanyVM>(cia);
         }
     }
 }

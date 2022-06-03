@@ -17,5 +17,6 @@ namespace JagoRTT.Infrastructure.DBConfiguration
             builder.UseMySql(conn, new MySqlServerVersion(new Version(8, 0, 29)));
             return new ApplicationContext(builder.Options);
         }
+       
     }
 }

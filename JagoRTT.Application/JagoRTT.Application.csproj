@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JagoRTT.Infrastructure\JagoRTT.Infrastructure.csproj" />
     <ProjectReference Include="..\JagoRTT\JagoRTT.domain.csproj" />
   </ItemGroup>
 

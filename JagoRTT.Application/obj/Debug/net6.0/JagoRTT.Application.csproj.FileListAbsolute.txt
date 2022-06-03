@@ -13,3 +13,7 @@ C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRT
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.dll
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\ref\JagoRTT.Application.dll
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Application.runtimeconfig.json
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Infrastructure.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\bin\Debug\net6.0\JagoRTT.Infrastructure.pdb
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.Application\obj\Debug\net6.0\JagoRTT.Application.genruntimeconfig.cache
