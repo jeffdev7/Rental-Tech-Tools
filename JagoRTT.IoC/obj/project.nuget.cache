@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DvHu++iF/zpA66eKuLqD9kEUyz97PztGBNTceQgQoirgozcK/8yG13v67igIJHUCFneX3LwQd0H1HiGXzR0CzQ==",
+  "dgSpecHash": "oLz7zyd8Ax+U12huiU7nYzgeb6BB46l3kmcZILLips0+qI4pLEGbz9BYutTUGb7md53C4iyuxaqYMuNRUTA+vQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.IoC\\JagoRTT.IoC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jefferson\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Jefferson\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Jefferson\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Jefferson\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Jefferson\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

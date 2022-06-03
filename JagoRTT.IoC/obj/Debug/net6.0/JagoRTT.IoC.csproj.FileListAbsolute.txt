@@ -17,3 +17,5 @@ C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\obj\Debug\net6.0\ref\JagoRTT.Io
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\obj\Debug\net6.0\JagoRTT.IoC.pdb
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\bin\Debug\net6.0\JagoRTT.IoC.runtimeconfig.json
 C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\obj\Debug\net6.0\JagoRTT.IoC.genruntimeconfig.cache
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\bin\Debug\net6.0\JagoRTT.Application.dll
+C:\Users\Jefferson\Documents\JagoRTT\JagoRTT.IoC\bin\Debug\net6.0\JagoRTT.Application.pdb

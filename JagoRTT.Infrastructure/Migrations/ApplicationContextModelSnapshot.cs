@@ -44,6 +44,16 @@ namespace JagoRTT.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4c0bbd06-5b45-4f95-b596-5a2150c0acee"),
+                            CNPJ = "88.654.744/0001-43",
+                            Email = "naughtyat@naughtyact.com",
+                            Name = "Naughty Cat",
+                            Phone = "1 1 1380-0999"
+                        });
                 });
 
             modelBuilder.Entity("JagoRTT.domain.Entities.Employee", b =>
@@ -86,30 +96,6 @@ namespace JagoRTT.Infrastructure.Migrations
                     b.HasIndex("ToolId");
 
                     b.ToTable("Employees");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ea1ee3cf-b657-4f32-bd55-41eb79d9f9cf"),
-                            CPF = "946.864.370-08",
-                            CompanyId = new Guid("30479b7b-fd49-4fa4-8a75-7849524e3e3b"),
-                            Email = "carlos@gmail.com",
-                            Name = "Carlos",
-                            Phone = "11 0909-212",
-                            RentalId = new Guid("8959274b-907a-46e9-ae5b-8a2a4dafc795"),
-                            ToolId = new Guid("38b82414-bd8f-4317-8440-d5329028989d")
-                        },
-                        new
-                        {
-                            Id = new Guid("ff2f8453-2bf9-4fe2-a8e1-c33dd5d23870"),
-                            CPF = "777.762.370-19",
-                            CompanyId = new Guid("30479b7b-fd49-4fa4-8a75-7849524e3e3b"),
-                            Email = "anne@gmail.com",
-                            Name = "Anne",
-                            Phone = "11 96909-212",
-                            RentalId = new Guid("c0a91cbd-e47a-4942-9e7c-6395e7647760"),
-                            ToolId = new Guid("38b82414-bd8f-4317-8440-d5329028989d")
-                        });
                 });
 
             modelBuilder.Entity("JagoRTT.domain.Entities.Rental", b =>
