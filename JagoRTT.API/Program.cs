@@ -16,10 +16,19 @@ builder.Services.AddAutoMapper(typeof(DomainVMMapping), typeof(VMDomainMapping))
 //IoC, DI
 builder.Services.AddScoped<ICompanyServices, CompanyServices>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IToolServices, ToolServices>();
+builder.Services.AddScoped<IToolRepository, ToolRepository>();
+
+
+//private static void RegisterServices(IServiceCollection services)
+//{
+//    MyDependencyInjectionClassInInfraLayerForNextTime.RegisterServices(services);
+//}
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
