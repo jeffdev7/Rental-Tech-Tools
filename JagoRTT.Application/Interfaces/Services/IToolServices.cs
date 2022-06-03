@@ -10,9 +10,9 @@ namespace JagoRTT.Application.Interfaces.Services
         IEnumerable<ToolVM> GetAll();
         ToolVM GetById(Guid id);
         IEnumerable<ToolVM> GetAllBy(Func<Tool, bool> exp);
-        ValidationResult Add(ToolVM vm);
-        ValidationResult Update(ToolVM vm);
-        ValidationResult Remove(Guid id);
+        Task<ToolVM> Update(ToolVM vm);
+        Task<ToolVM> Add(ToolVM vm);
+        Task<bool> Remove(Guid id);
         IEnumerable<ToolVM> GetTools();
     }
 }

@@ -1,5 +1,7 @@
 ﻿using JagoRTT.Application.Interfaces.Services;
 using JagoRTT.Application.ViewModel;
+using JagoRTT.domain.Entities.Enum;
+using JagoRTT.domain.Enum.VM;
 using JagoRTT.Infrastructure.DBConfiguration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,19 +18,23 @@ namespace JagoRTT.API.Controllers
         {
             _toolServices = toolServices;
         }
-       
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(Guid id)
         {
-             return (IActionResult)_toolServices.Remove(id);
-           
+            var status = await _toolServices.Remove(id);
+            if (!status) return BadRequest();
+            return Ok(status);
+
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] ToolVM vm)
+        public async Task<ActionResult<ToolVM>> Add([FromBody] ToolVM vm)
         {
-           return (IActionResult)_toolServices.Add(vm);
-            
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var cia = await _toolServices.Add(vm);
+            return Ok(cia);
+
         }
 
         [HttpGet("{id}")]
@@ -41,28 +47,31 @@ namespace JagoRTT.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<ToolVM>> GetCompanies()
         {
-             return _toolServices.GetAll().OrderBy(_ => _.Name);
+             return _toolServices.GetAll().OrderByDescending(_ => _.QuantityInStock);
            
          
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromBody] ToolVM vm)
+        public async Task<ActionResult<ToolVM>> Update([FromBody] ToolVM vm)
         {
-            return (IActionResult)_toolServices.Update(vm);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var cia = await _toolServices.Update(vm);
+            return Ok(cia);
+
         }
 
-        //[HttpGet("GetToolTypeEnums")]
-        //public async Task<IEnumerable<EnumTypeVm>> GetToolTypeEnums()
-        //{
-        //    return new List<EnumTypeVm>() {
-        //        new EnumTypeVm("Cassino",Convert.ToString((int)EToolType.Casino)),
-        //        new EnumTypeVm("Online",Convert.ToString((int)EToolType.Cloud)),
-        //        new EnumTypeVm("Padrão",Convert.ToString((int)EToolType.Default)),
-        //        new EnumTypeVm("Lan House",Convert.ToString((int)EToolType.LanHouse)),
-        //        new EnumTypeVm("Outros",Convert.ToString((int)EToolType.Other)),
-        //    };
-        //}
+        [HttpGet("GetToolByBrand")]
+        public async Task<IEnumerable<EnumTypeVM>> GetToolByBrand()
+        {
+            return new List<EnumTypeVM>() {
+                new EnumTypeVM("HP", Convert.ToString((int)EBrand.HP)),
+                new EnumTypeVM("DELL", Convert.ToString((int)EBrand.DELL)),
+                new EnumTypeVM("LENOVO", Convert.ToString((int)EBrand.LENOVO)),
+                new EnumTypeVM("MACBOOK", Convert.ToString((int)EBrand.APPLE)),
+
+            };
+        }
 
     }
 }

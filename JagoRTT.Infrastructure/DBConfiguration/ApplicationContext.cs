@@ -80,14 +80,14 @@ namespace JagoRTT.Infrastructure.DBConfiguration
             //});
 
             //SEEDER FOR COMPANY AND TOOL - ONLY PK
-            modelBuilder.Entity<Company>().HasData(new Company
-            {
-                Id = Guid.NewGuid(),
-                Name = "Naughty Cat",
-                CNPJ = "88.654.744/0001-43",
-                Email = "naughtyat@naughtyact.com",
-                Phone = "1 1 1380-0999"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "Naughty Cat",
+            //    CNPJ = "88.654.744/0001-43",
+            //    Email = "naughtyat@naughtyact.com",
+            //    Phone = "1 1 1380-0999"
+            //});
             //modelBuilder.Entity<Company>().HasData(new Company
             //{
             //    Id = Guid.NewGuid(),
