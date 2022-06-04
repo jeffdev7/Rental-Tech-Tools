@@ -10,10 +10,15 @@ namespace JagoRTT.Application.Interfaces.Services
         IEnumerable<EmployeeVM> GetAll();
         EmployeeVM GetById(Guid id);
         IEnumerable<EmployeeVM> GetAllBy(Func<Employee, bool> exp);
-        ValidationResult Add(EmployeeVM vm);
-        ValidationResult Update(EmployeeVM vm);
-        ValidationResult Remove(Guid id);
+        Task<EmployeeVM> Update(EmployeeVM vm);
+        Task<EmployeeVM> Add(EmployeeVM vm);
+        Task<bool> Remove(Guid id);
         IEnumerable<ToolListModel> GetToolList();
         IEnumerable<CompanyListModel> GetCompanyList();
+
+        //extras
+        IEnumerable<ToolVM> GetTools();
+        IEnumerable<CompanyVM> GetCompanies();
+        IEnumerable<RentalVM> GetRental();
     }
 }

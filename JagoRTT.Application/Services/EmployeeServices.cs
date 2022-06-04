@@ -6,6 +6,7 @@ using JagoRTT.domain.Entities;
 using JagoRTT.domain.Interfaces.Repositories;
 using JagoRTT.domain.Model;
 using JagoRTT.domain.Validator;
+using JagoRTT.Infrastructure.DBConfiguration;
 using Microsoft.EntityFrameworkCore;
 
 namespace JagoRTT.Application.Services
@@ -14,11 +15,13 @@ namespace JagoRTT.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly ApplicationContext _context;
 
-        public EmployeeServices(IMapper mapper, IEmployeeRepository employeeRepository)
+        public EmployeeServices(IMapper mapper, IEmployeeRepository employeeRepository, ApplicationContext context)
         {
             _mapper = mapper;
             _employeeRepository = employeeRepository;
+            _context = context;
         }
         /// <summary>
         /// Business Logic
@@ -70,14 +73,12 @@ namespace JagoRTT.Application.Services
             return _mapper.Map<IEnumerable<EmployeeVM>>(_employeeRepository.GetAllBy(exp));
 
         }
-        public ValidationResult Add(EmployeeVM vm)
+        public async Task<EmployeeVM> Add(EmployeeVM vm)
         {
-            var entity = _mapper.Map<Employee>(vm);
-            var validationResult = new EmployeeValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _employeeRepository.Add(entity);
-
-            return validationResult;
+            Employee employee = _mapper.Map<Employee>(vm);
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<EmployeeVM>(employee);
         }
 
         public void Dispose()
@@ -85,27 +86,35 @@ namespace JagoRTT.Application.Services
             GC.SuppressFinalize(this);
         }
 
-        public ValidationResult Remove(Guid id)
+        public async Task<bool> Remove(Guid id)
         {
-            var entity = _employeeRepository.GetById(id);
-            var validationResult = new EmployeeValidator().Validate(entity);
-            if (validationResult.IsValid)
-                _employeeRepository.Remove(id);
-   
-            return validationResult;
+            Employee employee = await _context.Employees.Where(p => p.Id == id)
+                    .FirstOrDefaultAsync();
+            if (employee == null) return false;
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public ValidationResult Update(EmployeeVM vm)
+        public async Task<EmployeeVM> Update(EmployeeVM vm)
         {
-            var entity = _mapper.Map<Employee>(vm);
-            var validationResult = new EmployeeValidator().Validate(entity);
-
-            if (validationResult.IsValid)
-            {
-                _employeeRepository.Update(entity);
-            }
-
-            return validationResult;
+            Employee employee = _mapper.Map<Employee>(vm);
+            _context.Employees.Update(employee);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<EmployeeVM>(employee);
+        }
+        //extras
+        public IEnumerable<ToolVM> GetTools()
+        {
+            return _mapper.Map<IEnumerable<ToolVM>>(_employeeRepository.GetTools());
+        }
+        public IEnumerable<CompanyVM> GetCompanies()
+        {
+            return _mapper.Map<IEnumerable<CompanyVM>>(_employeeRepository.GetCompany());
+        }
+        public IEnumerable<RentalVM> GetRental()
+        {
+            return _mapper.Map<IEnumerable<RentalVM>>(_employeeRepository.GetRental());
         }
     }
 }
