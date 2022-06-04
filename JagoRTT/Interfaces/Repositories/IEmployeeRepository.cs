@@ -6,7 +6,7 @@ namespace JagoRTT.domain.Interfaces.Repositories
     public interface IEmployeeRepository : IRepository<Employee>
     {
         
-        IQueryable<Company> GetCia();
+        IQueryable<Company> GetCompany();
         IQueryable<Tool> GetTools();
         IQueryable<Rental> GetRental();
         bool IsValidCompanyId(Guid companyId);
