@@ -30,7 +30,12 @@
       "ProjectGuid": "1a4fdf6b-842d-49be-b0cf-0c105568f735",
       "DisplayName": "JagoRTT.API",
       "ColorIndex": 4
+    },
+    "2ccde2a8-add1-4cf1-b807-dc6f14e71638": {
+      "ProjectGuid": "2ccde2a8-add1-4cf1-b807-dc6f14e71638",
+      "DisplayName": "JagoRTT.UI",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }
