@@ -28,7 +28,6 @@ namespace JagoRTT.domain.Entities
             ToolId = toolId;
             CompanyId = companyId;
         }
-
         public void Configure(EntityTypeBuilder<Rental>builder)
         {
             builder.HasKey(j => j.Id);

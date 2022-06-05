@@ -8,7 +8,7 @@ namespace JagoRTT.Application.ViewModel
         public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
+       // [Required]
         public string CNPJ { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }

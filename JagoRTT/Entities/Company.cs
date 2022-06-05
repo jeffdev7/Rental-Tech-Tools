@@ -26,9 +26,9 @@ namespace JagoRTT.domain.Entities
             builder.HasKey(j => j.Id);
             builder.Property(j => j.Id).IsRequired();
             builder.Property(j => j.Name);
-            builder.Property(j => j.CNPJ).IsRequired();
-            builder.Property(j => j.Email).IsRequired();
-            builder.Property(j => j.Phone).IsRequired();
+           builder.Property(j => j.CNPJ).IsRequired();
+           builder.Property(j => j.Email).IsRequired();
+           builder.Property(j => j.Phone).IsRequired();
         }
     }
 }

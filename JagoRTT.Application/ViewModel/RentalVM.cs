@@ -20,7 +20,7 @@ namespace JagoRTT.Application.ViewModel
         public ETypeOfRental Type { get; set; }
         public Guid ToolId { get; set; }
         public Guid CompanyId { get; set; }
-      // public string ToolName { get; internal set; }
-       // public string CiaName { get; internal set; }
+        public string ToolName { get; internal set; }//only for UI
+        public string CiaName { get; internal set; }//only for UI
     }
 }
