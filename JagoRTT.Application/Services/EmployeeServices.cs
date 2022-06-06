@@ -35,11 +35,16 @@ namespace JagoRTT.Application.Services
         {
             return _employeeRepository.GetCompanyList();
         }
+        public IEnumerable<RentalListModel> GetRentalList()
+        {
+            return _employeeRepository.GetRentalList();
+        }
 
         public IEnumerable<EmployeeVM> GetAll()
         {
             var employeeData = _employeeRepository.GetAll()
-                 .Include(_ => _.Tool)
+                 .Include(_ => _.Tool).Include(_=>_.Company)
+                 .Include(_=>_.Rental)
                  .Select(_ => new EmployeeVM
                  {
                      Id = _.Id,
@@ -48,11 +53,11 @@ namespace JagoRTT.Application.Services
                      Email = _.Email,
                      Phone = _.Phone,
                      CompanyId = _.CompanyId,
-                    // CiaName = _.Company.Name,
+                     CiaName = _.Company.Name,//for UI
                      ToolId = _.ToolId,
-                    // ToolName = _.Tool.Name,
+                     ToolName = _.Tool.Name,//for UI
                      RentalId = _.RentalId,
-                    // RentalType = _.Rental.Type
+                     RentalType = _.Rental.Type//for UI
 
                  }).AsNoTracking();
             Dispose();
@@ -116,5 +121,6 @@ namespace JagoRTT.Application.Services
         {
             return _mapper.Map<IEnumerable<RentalVM>>(_employeeRepository.GetRental());
         }
+
     }
 }
