@@ -118,7 +118,7 @@ namespace JagoRTT.UI.Controllers
 
             var employee = await Db.Employees
                 .Include(r => r.Company)
-                .Include(r => r.Tool)
+                .Include(r => r.Tool).Include(_ => _.Rental)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (employee == null)
             {

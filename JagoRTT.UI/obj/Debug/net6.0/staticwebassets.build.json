@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DLyrwRP3Pjw4kizu5gNI5gPabmBgIo5uTHDmirtxvcs=",
+  "Hash": "5YkUgSvl+FJD1mfpVQ0H6fxmwiokHu+ysgeeB1+2S/s=",
   "Source": "JagoRTT.UI",
   "BasePath": "_content/JagoRTT.UI",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\JagoRTT.UI.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\ComputerToolIcon.png",
+      "SourceId": "JagoRTT.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\",
+      "BasePath": "_content/JagoRTT.UI",
+      "RelativePath": "ComputerToolIcon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ComputerToolIcon.png"
+    },
+    {
+      "Identity": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\css\\newStyle.css",
+      "SourceId": "JagoRTT.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\",
+      "BasePath": "_content/JagoRTT.UI",
+      "RelativePath": "css/newStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\newStyle.css"
     },
     {
       "Identity": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\css\\site.css",
@@ -1069,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\logo\\logo.png",
+      "SourceId": "JagoRTT.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jefferson\\Documents\\JagoRTT\\JagoRTT.UI\\wwwroot\\",
+      "BasePath": "_content/JagoRTT.UI",
+      "RelativePath": "logo/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo\\logo.png"
     }
   ]
 }
