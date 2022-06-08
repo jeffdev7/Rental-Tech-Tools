@@ -2,12 +2,11 @@
 @model Rental
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit rental";
 }
+<br/>
+<h3>Update rental information</h3>
 
-<h1>Edit</h1>
-
-<h4>Rental</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,12 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="BeginDate" class="control-label"></label>
+                <label asp-for="BeginDate" class="control-label">Start date</label>
                 <input asp-for="BeginDate" class="form-control" />
                 <span asp-validation-for="BeginDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
+                <label asp-for="EndDate" class="control-label">End date</label>
                 <input asp-for="EndDate" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
@@ -35,7 +34,7 @@
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ToolId" class="control-label"></label>
+                <label asp-for="ToolId" class="control-label">Tool</label>
                 <select asp-for="ToolId" class="form-control">
                     <option value="0">Selecione</option>
                         @foreach (var item in ViewBag.Tools)
@@ -46,7 +45,7 @@
                 <span asp-validation-for="ToolId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CompanyId" class="control-label"></label>
+                <label asp-for="CompanyId" class="control-label">Company</label>
                 <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId">
                      @foreach (var item in ViewBag.Companies)
                         {
@@ -56,14 +55,14 @@
                 <span asp-validation-for="CompanyId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div>
+                    <br />
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

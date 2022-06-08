@@ -5,10 +5,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<br/>
+<h3>Details of the employee</h3>
 
 <div>
-    <h4>Employee</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -48,7 +48,7 @@
             @Html.DisplayFor(model => model.Tool.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Rental)
+            Rental type
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Rental.Type)
@@ -56,6 +56,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn border-success">Edit</a> |
+    <a asp-action="Index" class="btn border-success">Back to List</a>
 </div>

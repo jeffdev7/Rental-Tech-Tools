@@ -2,28 +2,33 @@
 @using JagoRTT.Application.ViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tools";
 }
 
-<h1>Index</h1>
+<head>
+            <script src="https://kit.fontawesome.com/ca515fdac4.js" crossorigin="anonymous"></script>
+</head>
+<br />
+<h2>Tools</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-success"><i class="fas fa-laptop"></i>New</a>
 </p>
 <table class="table">
     <thead>
+
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+               Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                Model
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Brand)
+                Brand
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QuantityInStock)
+                Quantity In Stock
             </th>
             <th></th>
         </tr>
@@ -44,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.QuantityInStock)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
 }
