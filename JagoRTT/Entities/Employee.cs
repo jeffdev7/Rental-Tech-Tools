@@ -14,12 +14,10 @@ namespace JagoRTT.domain.Entities
         public Guid CompanyId { get; set; }
         public virtual Tool Tool { get; set; }
         public Guid ToolId { get; set; }
-        public virtual Rental Rental {get;set;}
-        public Guid RentalId { get; set; }
 
         public Employee() { }
 
-        public Employee(Guid id, string name, string cpf, string email, string phone, Guid companyId, Guid toolId, Guid rentalId)
+        public Employee(Guid id, string name, string cpf, string email, string phone, Guid companyId, Guid toolId)
         {
             Id = id;
             Name = name;
@@ -28,7 +26,6 @@ namespace JagoRTT.domain.Entities
             Phone = phone;
             CompanyId = companyId;
             ToolId = toolId;
-            RentalId = rentalId;
         }
 
         public void Configure(EntityTypeBuilder<Employee>builder)

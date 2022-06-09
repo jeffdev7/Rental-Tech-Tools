@@ -55,8 +55,7 @@ namespace JagoRTT.UI.Controllers
         }
 
         // POST: Company/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,CNPJ,Email,Phone")] Company company)
@@ -68,6 +67,7 @@ namespace JagoRTT.UI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            TempData["success"] = "Company added successfully";
             return View(company);
         }
 
@@ -88,8 +88,7 @@ namespace JagoRTT.UI.Controllers
         }
 
         // POST: Company/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,CNPJ,Email,Phone")] Company company)
@@ -156,6 +155,7 @@ namespace JagoRTT.UI.Controllers
             }
             
             await _context.SaveChangesAsync();
+            TempData["success"] = "Company deleted successfully";
             return RedirectToAction(nameof(Index));
         }
 

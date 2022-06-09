@@ -15,12 +15,11 @@ namespace JagoRTT.Application.Interfaces.Services
         Task<bool> Remove(Guid id);
         IEnumerable<ToolListModel> GetToolList();
         IEnumerable<CompanyListModel> GetCompanyList();
-        IEnumerable<RentalListModel> GetRentalList();
 
         //extras
         IEnumerable<ToolVM> GetTools();
         IEnumerable<CompanyVM> GetCompanies();
-        IEnumerable<RentalVM> GetRental();
+
 
     }
 }

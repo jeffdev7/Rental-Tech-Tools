@@ -1,10 +1,10 @@
 ﻿namespace JagoRTT.domain.Entities.Enum
 {
-    public enum EBrand
+    public enum ETypeOfRental
     {
-        HP = 1,
-        DELL,
-        LENOVO,
-        APPLE
+        Monthly = 1,
+        Trimester,
+        Semester,
+        Weekly
     }
 }

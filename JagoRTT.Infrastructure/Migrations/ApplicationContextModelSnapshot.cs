@@ -44,16 +44,6 @@ namespace JagoRTT.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("4c0bbd06-5b45-4f95-b596-5a2150c0acee"),
-                            CNPJ = "88.654.744/0001-43",
-                            Email = "naughtyat@naughtyact.com",
-                            Name = "Naughty Cat",
-                            Phone = "1 1 1380-0999"
-                        });
                 });
 
             modelBuilder.Entity("JagoRTT.domain.Entities.Employee", b =>
@@ -81,17 +71,12 @@ namespace JagoRTT.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<Guid>("RentalId")
-                        .HasColumnType("char(36)");
-
                     b.Property<Guid>("ToolId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CompanyId");
-
-                    b.HasIndex("RentalId");
 
                     b.HasIndex("ToolId");
 
@@ -164,12 +149,6 @@ namespace JagoRTT.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JagoRTT.domain.Entities.Rental", "Rental")
-                        .WithMany()
-                        .HasForeignKey("RentalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("JagoRTT.domain.Entities.Tool", "Tool")
                         .WithMany()
                         .HasForeignKey("ToolId")
@@ -177,8 +156,6 @@ namespace JagoRTT.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Company");
-
-                    b.Navigation("Rental");
 
                     b.Navigation("Tool");
                 });

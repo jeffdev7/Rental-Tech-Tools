@@ -4,15 +4,22 @@
 @{
     ViewData["Title"] = "Tools";
 }
-
+@if (TempData["success"]!= null)
+{
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["success"]');
+    </script>
+}
 <head>
             <script src="https://kit.fontawesome.com/ca515fdac4.js" crossorigin="anonymous"></script>
 </head>
 <br />
-<h2>Tools</h2>
+<h3>Tools</h3>
 
 <p>
-    <a asp-action="Create" class="btn btn-outline-success"><i class="fas fa-laptop"></i>New</a>
+    <a asp-action="Create" class="btn btn-outline-success"><i class="fas fa-laptop"></i> New</a>
 </p>
 <table class="table">
     <thead>
