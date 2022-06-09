@@ -1,4 +1,5 @@
-﻿using JagoRTT.domain.Interfaces.Repositories;
+﻿using JagoRTT.domain.Entities;
+using JagoRTT.domain.Interfaces.Repositories;
 using JagoRTT.Infrastructure.DBConfiguration;
 using Microsoft.EntityFrameworkCore;
 

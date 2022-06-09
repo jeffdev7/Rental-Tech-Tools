@@ -35,16 +35,12 @@ namespace JagoRTT.Application.Services
         {
             return _employeeRepository.GetCompanyList();
         }
-        public IEnumerable<RentalListModel> GetRentalList()
-        {
-            return _employeeRepository.GetRentalList();
-        }
+
 
         public IEnumerable<EmployeeVM> GetAll()
         {
             var employeeData = _employeeRepository.GetAll()
                  .Include(_ => _.Tool).Include(_=>_.Company)
-                 .Include(_=>_.Rental)
                  .Select(_ => new EmployeeVM
                  {
                      Id = _.Id,
@@ -56,8 +52,6 @@ namespace JagoRTT.Application.Services
                      CiaName = _.Company.Name,//for UI
                      ToolId = _.ToolId,
                      ToolName = _.Tool.Name,//for UI
-                     RentalId = _.RentalId,
-                     RentalType = _.Rental.Type//for UI
 
                  }).AsNoTracking();
             Dispose();
@@ -121,6 +115,28 @@ namespace JagoRTT.Application.Services
         {
             return _mapper.Map<IEnumerable<RentalVM>>(_employeeRepository.GetRental());
         }
+        public EmployeeVM GetCiaById(Guid id)
+        {
 
+            var notDelete = _employeeRepository.GetAll()
+
+                .Include(_ => _.Company).Where(_ => _.Id == id)
+                .Include(_ => _.Tool)
+                .Select(_ => new EmployeeVM
+                {
+                    Id = id,
+                    Name = _.Name,
+                    CPF = _.CPF,
+                    Email = _.Email,
+                    Phone = _.Phone,
+                    CompanyId = _.CompanyId,
+                    CiaName = _.Company.Name,//for UI
+                    ToolId = _.ToolId,
+                    ToolName = _.Tool.Name,//for UI
+                }
+                ).FirstOrDefault();
+            Dispose();
+            return notDelete;
+        }
     }
 }

@@ -68,17 +68,26 @@ namespace JagoRTT.UI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create (Rental rental)
-        {//rental.Id = Guid.NewGuid();
+        {
             LoadViewBags();
             if (ModelState.IsValid)
             {
                 return View(rental);
 
             }
-            Db.Rentals.Add(rental);
-            Db.SaveChanges();
-            //TempData["success"] = "Trip added successfully";
-            return RedirectToAction("Index");
+            if (rental.BeginDate < rental.EndDate)
+            {
+
+
+                Db.Rentals.Add(rental);
+                Db.SaveChanges();
+                TempData["success"] = "Rental added successfully";
+            }
+            else
+            {
+                throw new Exception();
+            }
+                return RedirectToAction("Index");
         }
 
         // GET: Rental/Edit/5
@@ -90,9 +99,6 @@ namespace JagoRTT.UI.Controllers
             return View(item);
         }
 
-        // POST: Rental/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit (Rental rental)
@@ -105,7 +111,6 @@ namespace JagoRTT.UI.Controllers
             }
             Db.Rentals.Update(rental);
             Db.SaveChanges();
-           // TempData["success"] = "Trip updated successfully";
             return RedirectToAction("Index");
         }
 
@@ -143,7 +148,7 @@ namespace JagoRTT.UI.Controllers
             {
                 Db.Rentals.Remove(rental);
             }
-            
+            TempData["success"] = "Rental deleted successfully";
             await Db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

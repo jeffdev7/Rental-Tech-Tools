@@ -45,10 +45,7 @@ namespace JagoRTT.Infrastructure.Repositories
         {
             return Db.Companies.Select(j => new CompanyListModel { Id = j.Id, Name = j.Name }).AsQueryable();
         }
-        public IQueryable<RentalListModel> GetRentalList()
-        {
-            return Db.Rentals.Select(j => new RentalListModel { Id = j.Id, Type = j.Type }).AsQueryable();
-        }
+
         public IQueryable<ToolListModel> GetToolList()
         {
             return Db.Tools.Select(j => new ToolListModel { Id = j.Id, Name = j.Name }).AsQueryable();

@@ -6,7 +6,7 @@
 }
 
 <br/>
-<h3>Update employee information</h3>
+<h4>Update employee information</h4>
 
 <hr />
 <div class="row">
@@ -53,16 +53,6 @@
                         }
                 </select>
                 <span asp-validation-for="ToolId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RentalId" class="control-label">Rental type</label>
-                <select asp-for="RentalId" class="form-control" asp-items="ViewBag.RentalId">
-                     @foreach (var item in ViewBag.Rentals)
-                        {
-                            <option value="@item.Id">@item.Type</option>
-                        }
-                </select>
-                <span asp-validation-for="RentalId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div>

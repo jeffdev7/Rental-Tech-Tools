@@ -4,15 +4,22 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@if (TempData["success"]!= null)
+{
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["success"]');
+    </script>
+}
 <head>
             <script src="https://kit.fontawesome.com/ca515fdac4.js" crossorigin="anonymous"></script>
 </head>
 <br/>
-<h2>Employee</h2>
+<h3>Employee</h3>
 
 <p>
-    <a asp-action="Create" class="btn btn-outline-success"><i class="fas fa-address-card"></i>New</a>
+    <a asp-action="Create" class="btn btn-outline-success"><i class="fas fa-address-card"></i> New</a>
 </p>
 <table class="table">
     <thead>
@@ -34,9 +41,6 @@
             </th>
             <th>
                 Tool
-            </th>
-            <th>
-                Rental type
             </th>
             <th></th>
         </tr>
@@ -63,10 +67,7 @@
                 @Html.DisplayFor(modelItem => item.ToolName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentalType)
-            </td>
-            <td>
-                 <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
+                 @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |*@
                 <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i></a> |
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>
             </td>

@@ -14,6 +14,5 @@ namespace JagoRTT.domain.Interfaces.Repositories
         bool IsValidRentalId(Guid rentalId);
         IQueryable<CompanyListModel> GetCompanyList();
         IQueryable<ToolListModel> GetToolList();
-        IQueryable<RentalListModel> GetRentalList();
     }
 }

@@ -9,7 +9,7 @@
 
 <br/>
 
-<h3>Add a new employee</h3>
+<h4>Add a new employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CPF" class="control-label"></label>
-                <input asp-for="CPF" class="form-control" />
+                <input asp-for="CPF" class="form-control" placeholder="804.873.610-16"/>
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -32,13 +32,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
+                <input asp-for="Phone" class="form-control" placeholder="+55 11 99999-0000"/>
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CompanyId" class="control-label">Company</label>
                 <select asp-for="CompanyId" class ="form-control" asp-items="ViewBag.CompanyId">
-                    <option value="0">Select</option>
+                    <option value="0"></option>
                     @foreach(var item in ViewBag.Companies)
                     {
                         <option value="@item.Id">@item.Name</option>
@@ -48,20 +48,10 @@
             <div class="form-group">
                 <label asp-for="ToolId" class="control-label">Tool</label>
                 <select asp-for="ToolId" class ="form-control" asp-items="ViewBag.ToolId">
-                    <option value="0">Select</option>
+                    <option value="0"></option>
                     @foreach(var item in ViewBag.Tools)
                     {
                         <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="RentalId" class="control-label">Rental type</label>
-                <select asp-for="RentalId" class ="form-control" asp-items="ViewBag.RentalId">
-                    <option value="0">Select</option>
-                    @foreach(var item in ViewBag.Rentals)
-                    {
-                        <option value="@item.Id">@item.Type</option>
                     }
                 </select>
             </div>

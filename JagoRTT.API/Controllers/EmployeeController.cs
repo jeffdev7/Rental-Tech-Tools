@@ -71,12 +71,6 @@ namespace JagoRTT.API.Controllers
             return _employeeServices.GetCompanies();
 
         }
-        [HttpGet("GetTypeOfRentalService")]
-        public async Task<IEnumerable<RentalVM>> GetRental()
-        {
-            return _employeeServices.GetRental();
-
-        }
 
     }
 }

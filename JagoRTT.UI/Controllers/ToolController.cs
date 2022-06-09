@@ -70,11 +70,10 @@ namespace JagoRTT.UI.Controllers
                 tool.Id = Guid.NewGuid();
                 Db.Tools.Add(tool);
                 Db.SaveChanges();
+               TempData["success"] = "Tool added successfully";
                 return RedirectToAction("Index");
 
             }
-           
-            //TempData["success"] = "Trip added successfully";
                 return View(tool);
 
         }
@@ -100,7 +99,7 @@ namespace JagoRTT.UI.Controllers
             if (item == null) return BadRequest();
             Db.Entry(tool).State = EntityState.Modified;
             Db.SaveChanges();
-            //TempData["success"] = "Passenger updated successfully";
+            TempData["success"] = "Tool updated successfully";
             return RedirectToAction("Index");
         }
        
@@ -131,7 +130,7 @@ namespace JagoRTT.UI.Controllers
             var tool = await Db.Tools.FindAsync(id);
             Db.Tools.Remove(tool);
             await Db.SaveChangesAsync();
-            //TempData["success"] = "Passenger deleted successfully";
+            TempData["success"] = "Tool deleted successfully";
             return RedirectToAction(nameof(Index));
             
         }

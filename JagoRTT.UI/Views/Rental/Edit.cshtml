@@ -5,7 +5,7 @@
     ViewData["Title"] = "Edit rental";
 }
 <br/>
-<h3>Update rental information</h3>
+<h4>Update rental information</h4>
 
 <hr />
 <div class="row">
@@ -15,12 +15,12 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="BeginDate" class="control-label">Start date</label>
-                <input asp-for="BeginDate" class="form-control" />
+                <input asp-for="BeginDate" class="form-control" readonly />
                 <span asp-validation-for="BeginDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EndDate" class="control-label">End date</label>
-                <input asp-for="EndDate" class="form-control" />
+                <input asp-for="EndDate" class="form-control" readonly />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -30,12 +30,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" asp-items="@ViewBag.TypeOfRental" class="form-control"></select>
+                <select asp-for="Type" asp-items="@ViewBag.TypeOfRental" class="form-control" readonly></select>
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ToolId" class="control-label">Tool</label>
-                <select asp-for="ToolId" class="form-control">
+                <select asp-for="ToolId" class="form-control" readonly>
                     <option value="0">Selecione</option>
                         @foreach (var item in ViewBag.Tools)
                         {
@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CompanyId" class="control-label">Company</label>
-                <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId">
+                <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId" readonly>
                      @foreach (var item in ViewBag.Companies)
                         {
                             <option value="@item.Id">@item.Name</option>

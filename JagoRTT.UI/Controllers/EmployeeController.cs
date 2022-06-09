@@ -4,6 +4,8 @@ using JagoRTT.Infrastructure.DBConfiguration;
 using JagoRTT.domain.Entities;
 using JagoRTT.Application.Interfaces.Services;
 using JagoRTT.Application.ViewModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using JagoRTT.domain.Entities.Enum;
 
 namespace JagoRTT.UI.Controllers
 {
@@ -49,7 +51,6 @@ namespace JagoRTT.UI.Controllers
             var employee = await Db.Employees
                 .Include(r => r.Company)
                 .Include(r => r.Tool)
-                .Include(_=>_.Rental)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (employee == null)
             {
@@ -78,7 +79,7 @@ namespace JagoRTT.UI.Controllers
             }
             Db.Employees.Add(employee);
             Db.SaveChanges();
-            //TempData["success"] = "Trip added successfully";
+            TempData["success"] = "Employee added successfully";
             return RedirectToAction("Index");
         }
 
@@ -104,7 +105,6 @@ namespace JagoRTT.UI.Controllers
             }
             Db.Employees.Update(employee);
             Db.SaveChanges();
-            // TempData["success"] = "Trip updated successfully";
             return RedirectToAction("Index");
         }
 
@@ -118,7 +118,7 @@ namespace JagoRTT.UI.Controllers
 
             var employee = await Db.Employees
                 .Include(r => r.Company)
-                .Include(r => r.Tool).Include(_ => _.Rental)
+                .Include(r => r.Tool)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (employee == null)
             {
@@ -133,6 +133,7 @@ namespace JagoRTT.UI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
+
             if (Db.Employees == null)
             {
                 return Problem("Entity set 'ApplicationContext.Employees'  is null.");
@@ -142,7 +143,7 @@ namespace JagoRTT.UI.Controllers
             {
                 Db.Employees.Remove(employee);
             }
-
+            TempData["success"] = "Employee deleted successfully";
             await Db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -159,7 +160,8 @@ namespace JagoRTT.UI.Controllers
         {
             ViewBag.Companies = _employeeServices.GetCompanyList().ToList();
             ViewBag.Tools = _employeeServices.GetToolList().ToList();
-            ViewBag.Rentals = _employeeServices.GetRentalList().ToList();
+
+       
 
         }
 
