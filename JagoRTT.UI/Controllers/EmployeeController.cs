@@ -4,8 +4,6 @@ using JagoRTT.Infrastructure.DBConfiguration;
 using JagoRTT.domain.Entities;
 using JagoRTT.Application.Interfaces.Services;
 using JagoRTT.Application.ViewModel;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using JagoRTT.domain.Entities.Enum;
 
 namespace JagoRTT.UI.Controllers
 {
