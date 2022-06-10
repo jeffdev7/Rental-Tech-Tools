@@ -50,7 +50,7 @@ namespace JagoRTT.Application.Services
                     ToolId = _.ToolId,
                     ToolName = _.Tool.Name,//only for UI
                     CompanyId = _.CompanyId,
-                   CiaName = _.Company.Name//only for UI
+                    CiaName = _.Company.Name//only for UI
 
                 }).AsNoTracking();
             Dispose();
@@ -71,7 +71,7 @@ namespace JagoRTT.Application.Services
                     ToolId = _.ToolId,
                     ToolName = _.Tool.Name,//only for UI
                     CompanyId = _.CompanyId,
-                   CiaName = _.Company.Name //only for UI--it may not be needed
+                    CiaName = _.Company.Name //only for UI--it may not be needed
                 }).AsNoTracking();
             Dispose();
             return tool;

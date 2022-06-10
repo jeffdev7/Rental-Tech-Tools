@@ -19,9 +19,8 @@ namespace JagoRTT.Application.ViewModel
         public string Phone { get; set; }
         public Guid CompanyId { get; set; }
         public Guid ToolId { get; set; }
-        public Guid RentalId { get; set; }
+
         public string CiaName { get; internal set; }
         public string ToolName { get; internal set; }
-       public ETypeOfRental RentalType { get; internal set; }
     }
 }

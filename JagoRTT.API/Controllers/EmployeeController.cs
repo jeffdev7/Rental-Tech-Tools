@@ -1,9 +1,5 @@
 ﻿using JagoRTT.Application.Interfaces.Services;
 using JagoRTT.Application.ViewModel;
-using JagoRTT.domain.Entities.Enum;
-using JagoRTT.domain.Enum.VM;
-using JagoRTT.Infrastructure.DBConfiguration;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JagoRTT.API.Controllers

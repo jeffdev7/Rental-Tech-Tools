@@ -1,5 +1,4 @@
-﻿using FluentValidation.Results;
-using JagoRTT.Application.ViewModel;
+﻿using JagoRTT.Application.ViewModel;
 using JagoRTT.domain.Entities;
 
 
